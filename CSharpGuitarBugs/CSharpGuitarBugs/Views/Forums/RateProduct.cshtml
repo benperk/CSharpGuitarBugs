@@ -1,0 +1,23 @@
+﻿@model CSharpGuitarBugs.Models.ForumsMemoryConsumptionBigListOfGuitars
+@{
+    ViewBag.Title = "Rate one of these products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Rate a Product</h2>
+<hr />
+<div class="form-group">
+    <img src="~/Images/electric/gibson.png" />
+</div>
+<br />
+<h4>So many to choose from, take your pick</h4>
+<br />
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        @Html.DisplayTextFor(model => model.memoryConsumptionBigListOfGuitars)
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

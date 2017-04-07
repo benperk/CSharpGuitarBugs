@@ -1,0 +1,27 @@
+﻿@model CSharpGuitarBugs.Models.AddItemViewModel
+@{
+    ViewBag.Title = "Add an Item";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AddItems", "Order", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h2>Add this Item to your Shopping Cart?</h2>
+    <hr />
+    <div class="form-group">
+        <img src="~/Images/electric/v.png" />
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @Html.HiddenFor(model => model.item, new { item = "GibsonFlyingV" })
+            <input type="submit" class="btn btn-default" value="Add to Cart" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

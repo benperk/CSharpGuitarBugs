@@ -1,0 +1,31 @@
+﻿@model CSharpGuitarBugs.Models.ForumsViewModel
+@{
+    ViewBag.Title = "Provide some Feedback";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("Feedback", "Forums", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h2>Provide some Feedback</h2>
+    <hr />
+    <div class="form-group">
+        <img src="~/Images/electric/tele.png" />
+    </div>
+    <br />
+    <h4>COMMENT: One of my favorite models, thanks!</h4>
+    <br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @Html.HiddenFor(model => model.item, new { item = "Love the Charvel, thanks" })
+            <input type="submit" class="btn btn-default" value="Send Feedback" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
