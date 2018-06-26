@@ -26,6 +26,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -332,6 +333,7 @@
     <Content Include="Views\Forums\Search.cshtml" />
     <Content Include="Views\Catalog\ViewByStrings.cshtml" />
     <Content Include="Views\Forums\RateProduct.cshtml" />
+    <Content Include="Views\Forums\FAQ.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

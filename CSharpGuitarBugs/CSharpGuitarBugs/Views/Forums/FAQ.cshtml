@@ -1,0 +1,23 @@
+﻿@model CSharpGuitarBugs.Models.ForumsViewModel
+@{
+    ViewBag.Title = "FAQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>FAQ</h2>
+<div class="form-group">
+    <img src="~/Images/electric/tele.png" />
+</div>
+<h2 style="color:#ff0000">@ViewBag.Message</h2>
+@using (Html.BeginForm("FAQ", "Forums", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @Html.HiddenFor(model => model.item, new { item = "HandledExceptionHappened" })
+            <input type="submit" class="btn btn-default" value="Report this exception" />
+        </div>
+    </div>
+}
+

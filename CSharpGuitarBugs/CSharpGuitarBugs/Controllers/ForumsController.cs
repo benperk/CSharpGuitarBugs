@@ -11,7 +11,7 @@ namespace CSharpGuitarBugs.Controllers
         // GET: Forums
         public ActionResult Index()
         {
-            System.Threading.Thread.Sleep(15000);
+            System.Threading.Thread.Sleep(15000);            
             return View();
         }
 
@@ -20,13 +20,6 @@ namespace CSharpGuitarBugs.Controllers
         {
             return View();
         }
-
-        //[HttpGet]
-        //public ActionResult Search()
-        //{
-        //    return new HttpStatusCodeResult(500, "No searching allowed unless you are logged in");
-        //    //return View();
-        //}
 
         [HttpPost]
         public ActionResult Feedback(string item)
@@ -44,7 +37,6 @@ namespace CSharpGuitarBugs.Controllers
 
             return View();
         }
-
 
         public ActionResult RateProduct()
         {
@@ -70,6 +62,33 @@ namespace CSharpGuitarBugs.Controllers
 
             System.Threading.Thread.Sleep(5000);
             return View(memoryConsumptionBigListOfGuitarsClass);
+        }
+
+        [HttpGet]
+        public ActionResult FAQ()
+        {
+            decimal percentage = 0, number = 1000, total = 0;
+
+            try
+            {
+                percentage = number / total;
+                ViewBag.Message = "You will never see this one.";
+            }
+            catch (DivideByZeroException divEx)
+            {
+                ViewBag.Message = $"A handled exception just happened: -> {divEx.Message.ToString()}";
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult FAQ(string item)
+        {
+            decimal percentage = 0, number = 1000, total = 0;
+            percentage = number / total;
+            ViewBag.Message = $"KABOOOOOOOOM!! -> {percentage.ToString()}";
+
+            return View();
         }
     }
 }
